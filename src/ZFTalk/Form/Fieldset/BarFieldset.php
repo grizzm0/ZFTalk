@@ -19,10 +19,10 @@ class BarFieldset extends Fieldset implements InputFilterProviderInterface
 
     public function getInputFilterSpecification()
     {
-        return array(
-            'name' => array(
+        return [
+            'name' => [
                 'required' => true,
-            )
-        );
+            ]
+        ];
     }
 }
