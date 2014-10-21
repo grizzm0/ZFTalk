@@ -58,7 +58,7 @@ return [
                 $tableGateway = new TableGateway('session', $adapter);
                 return new DbTableGateway($tableGateway, new DbTableGatewayOptions());
             },
-            'Zend\Session\SessionManager' => 'Zend\Session\Service\SessionManagerFactory',
+            'Zend\Session\ManagerInterface' => 'Zend\Session\Service\SessionManagerFactory',
         ],
     ],
 

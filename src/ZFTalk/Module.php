@@ -12,7 +12,7 @@ class Module
          * @var \Zend\Session\SessionManager $sessionManager
          */
         $serviceManager = $mvcEvent->getApplication()->getServiceManager();
-        $sessionManager = $serviceManager->get('Zend\Session\SessionManager');
+        $sessionManager = $serviceManager->get('Zend\Session\ManagerInterface');
         $sessionManager->start();
     }
 
