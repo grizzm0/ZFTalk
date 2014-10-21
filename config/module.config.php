@@ -52,6 +52,10 @@ return [
         ],
     ],
 
+    'session_manager' => [
+        'enable_default_container_manager' => true,
+    ],
+
     'view_manager' => [
         'template_map' => [
             'zf-talk/form/index' => __DIR__ .'/../view/zf-talk/form/index.phtml',
