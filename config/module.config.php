@@ -1,4 +1,9 @@
 <?php
+use Zend\Db\TableGateway\TableGateway;
+use Zend\ServiceManager\ServiceLocatorInterface;
+use Zend\Session\SaveHandler\DbTableGateway;
+use Zend\Session\SaveHandler\DbTableGatewayOptions;
+
 return [
     'controllers' => [
         'invokables' => [
@@ -42,6 +47,18 @@ return [
                     ],
                 ],
             ],
+        ],
+    ],
+
+    'service_manager' => [
+        'factories' => [
+            'Zend\Session\SaveHandler\SaveHandlerInterface' => function(ServiceLocatorInterface $serviceLocator) {
+                /** @var \Zend\Db\Adapter\Adapter $adapter */
+                $adapter = $serviceLocator->get('Zend\Db\Adapter\Adapter');
+                $tableGateway = new TableGateway('session', $adapter);
+                return new DbTableGateway($tableGateway, new DbTableGatewayOptions());
+            },
+            'Zend\Session\SessionManager' => 'Zend\Session\Service\SessionManagerFactory',
         ],
     ],
 
