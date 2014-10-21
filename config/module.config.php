@@ -52,7 +52,7 @@ return [
 
     'service_manager' => [
         'factories' => [
-            'Zend\Session\SaveHandler\SaveHandlerInterface' => 'ZFTalk\Factory\Session\SaveHandler\DbTableGatewayHandlerFactory',
+            'Zend\Session\SaveHandler\SaveHandlerInterface' => 'ZFTalk\Factory\Session\SaveHandler\DbTableGatewayFactory',
             'Zend\Session\ManagerInterface' => 'Zend\Session\Service\SessionManagerFactory',
         ],
     ],

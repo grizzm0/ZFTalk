@@ -7,7 +7,7 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\Session\SaveHandler\DbTableGateway;
 use Zend\Session\SaveHandler\DbTableGatewayOptions;
 
-class DbTableGatewayHandlerFactory implements FactoryInterface
+class DbTableGatewayFactory implements FactoryInterface
 {
     /**
      * @param ServiceLocatorInterface $serviceLocator
