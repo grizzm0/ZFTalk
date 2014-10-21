@@ -7,6 +7,10 @@ class Module
 {
     public function onBootstrap(MvcEvent $mvcEvent)
     {
+        /**
+         * @var \Zend\ServiceManager\ServiceManager $serviceManager
+         * @var \Zend\Session\SessionManager $sessionManager
+         */
         $serviceManager = $mvcEvent->getApplication()->getServiceManager();
         $sessionManager = $serviceManager->get('Zend\Session\SessionManager');
         $sessionManager->start();
