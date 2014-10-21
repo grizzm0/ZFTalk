@@ -1,9 +1,4 @@
 <?php
-use Zend\Db\TableGateway\TableGateway;
-use Zend\ServiceManager\ServiceLocatorInterface;
-use Zend\Session\SaveHandler\DbTableGateway;
-use Zend\Session\SaveHandler\DbTableGatewayOptions;
-
 return [
     'controllers' => [
         'invokables' => [
