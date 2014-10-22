@@ -46,10 +46,18 @@ return [
     ],
 
     'service_manager' => [
+        /*'abstract_factories' => [
+            'Zend\Session\Service\ContainerAbstractServiceFactory',
+        ],*/
         'factories' => [
+            'Zend\Session\Config\ConfigInterface'           => 'Zend\Session\Service\SessionConfigFactory',
+            'Zend\Session\ManagerInterface'                 => 'Zend\Session\Service\SessionManagerFactory',
             'Zend\Session\SaveHandler\SaveHandlerInterface' => 'ZFTalk\Factory\Session\SaveHandler\DbTableGatewayFactory',
-            'Zend\Session\ManagerInterface' => 'Zend\Session\Service\SessionManagerFactory',
         ],
+    ],
+
+    'session_config' => [
+        'name' => 'SESSIONID',
     ],
 
     'session_manager' => [
